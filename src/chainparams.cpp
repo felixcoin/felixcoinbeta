@@ -50,7 +50,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "BBC NEWS 10/May/2021 Cryptocurrency: Musk's SpaceX to launch dogecoin moon mission";
+    const char* pszTimestamp = "Felix";
     const CScript genesisOutputScript = CScript() << ParseHex("040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -123,7 +123,7 @@ public:
 
         // Blocks 2600 - 371336 are Digishield without AuxPoW
         digishieldConsensus = consensus;
-        digishieldConsensus.nHeightEffective = 2600;
+        digishieldConsensus.nHeightEffective = 10;
         digishieldConsensus.fSimplifiedRewards = true;
         digishieldConsensus.fDigishieldDifficultyCalculation = true;
         digishieldConsensus.nPowTargetTimespan = 60; // post-digishield: 1 minute
@@ -152,14 +152,14 @@ public:
         nDefaultPort = 21889;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1620688888, 2084863571, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1622926800, 2084784087, 0x1e0ffff0, 1, 1 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("02a443ba77645f53816b5b309a4e183de83eab4b308be7c8247e7e56db9d101c"));
-        assert(genesis.hashMerkleRoot == uint256S("a6931d00ddadee46ba1887df8b8a54b0d3108e0e92c85702e85ffa9a589122d6"));
+        assert(consensus.hashGenesisBlock == uint256S("0x7c71fb665d9edc882c15661c58acb5c479231c2a82bdc86fdb6b9294e002bdf0"));
+        assert(genesis.hashMerkleRoot == uint256S("0xb5dfea715722b73e4134c7adc78847ddc2227f1ee73687cec63e81d57d07c43f"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("multidoge.org", "seed.multidoge.org", true));
@@ -182,7 +182,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0xea3a69c27fbd2181d43e2b3be6cdc483c6e86d00e94b754a9a3b717987b8261c"))
+            (      0, uint256S("0x7c71fb665d9edc882c15661c58acb5c479231c2a82bdc86fdb6b9294e002bdf0"))
             /*( 104679, uint256S("0x35eb87ae90d44b98898fec8c39577b76cb1eb08e1261cfc10706c8ce9a1d01cf"))
             ( 145000, uint256S("0xcc47cae70d7c5c92828d3214a266331dde59087d4a39071fa76ddfff9b7bde72"))
             ( 371337, uint256S("0x60323982f9c5ff1b5a954eac9dc1269352835f47c2c5222691d80f0d50dcf053"))
@@ -206,7 +206,7 @@ public:
         chainTxData = ChainTxData{
             // Data as of block 954c7c66dee51f0a3fb1edb26200b735f5275fe54d9505c76ebd2bcabac36f1e (height 3606083).
             // Tx estimate based on average of year 2021 (~40k transactions per day)
-            1620688888, // * UNIX timestamp of last checkpoint block
+            1622926800, // * UNIX timestamp of last checkpoint block
             0,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0        // * estimated number of transactions per second after checkpoint
