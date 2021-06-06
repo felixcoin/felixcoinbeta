@@ -152,14 +152,14 @@ public:
         nDefaultPort = 21889;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1622926800, 2084784087, 0x1e0ffff0, 1, 1 * COIN);
+        genesis = CreateGenesisBlock(1622926800, 2085172473, 0x1e0ffff0, 1, 50 * COIN);
 
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
 
-        assert(consensus.hashGenesisBlock == uint256S("0x7c71fb665d9edc882c15661c58acb5c479231c2a82bdc86fdb6b9294e002bdf0"));
-        assert(genesis.hashMerkleRoot == uint256S("0xb5dfea715722b73e4134c7adc78847ddc2227f1ee73687cec63e81d57d07c43f"));
+        assert(consensus.hashGenesisBlock == uint256S("0x01e6d00fd214c08faadea5abb4a2b27a4b143a7afafc92d34a813845882fd158"));
+        assert(genesis.hashMerkleRoot == uint256S("0x35d5d098d85997c5c6f5aab3a3f2e5a6e2543afd7c9da800f2bc951707be9367"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         //vSeeds.push_back(CDNSSeedData("multidoge.org", "seed.multidoge.org", true));
@@ -182,7 +182,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (      0, uint256S("0x7c71fb665d9edc882c15661c58acb5c479231c2a82bdc86fdb6b9294e002bdf0"))
+            (      0, uint256S("0x01e6d00fd214c08faadea5abb4a2b27a4b143a7afafc92d34a813845882fd158"))
             /*( 104679, uint256S("0x35eb87ae90d44b98898fec8c39577b76cb1eb08e1261cfc10706c8ce9a1d01cf"))
             ( 145000, uint256S("0xcc47cae70d7c5c92828d3214a266331dde59087d4a39071fa76ddfff9b7bde72"))
             ( 371337, uint256S("0x60323982f9c5ff1b5a954eac9dc1269352835f47c2c5222691d80f0d50dcf053"))
@@ -311,13 +311,13 @@ public:
         nDefaultPort = 44556;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1391503289, 1378051, 0x1e0ffff0, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1622926800, 2085172473, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         minDifficultyConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0xd59c972a986850a65700e8b5949cdbfb8a3c00caf5b12671819bc8cd0e925aea"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa6931d00ddadee46ba1887df8b8a54b0d3108e0e92c85702e85ffa9a589122d6"));
+        assert(consensus.hashGenesisBlock == uint256S("0x01e6d00fd214c08faadea5abb4a2b27a4b143a7afafc92d34a813845882fd158"));
+        assert(genesis.hashMerkleRoot == uint256S("0x35d5d098d85997c5c6f5aab3a3f2e5a6e2543afd7c9da800f2bc951707be9367"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -340,7 +340,7 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            ( 0, uint256S("0xd59c972a986850a65700e8b5949cdbfb8a3c00caf5b12671819bc8cd0e925aea"))
+            ( 0, uint256S("0x01e6d00fd214c08faadea5abb4a2b27a4b143a7afafc92d34a813845882fd158"))
             ( 483173, uint256S("0xa804201ca0aceb7e937ef7a3c613a9b7589245b10cc095148c4ce4965b0b73b5"))
             ( 591117, uint256S("0x5f6b93b2c28cedf32467d900369b8be6700f0649388a7dbfd3ebd4a01b1ffad8"))
             ( 658924, uint256S("0xed6c8324d9a77195ee080f225a0fca6346495e08ded99bcda47a8eea5a8a620b"))
@@ -441,12 +441,12 @@ public:
         nDefaultPort = 18444;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1296688602, 2, 0x207fffff, 1, 88 * COIN);
+        genesis = CreateGenesisBlock(1622926800, 2085172473, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         digishieldConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
         auxpowConsensus.hashGenesisBlock = consensus.hashGenesisBlock;
-        assert(consensus.hashGenesisBlock == uint256S("0x4a81bc2f877b35530b6606feb968ff574479590e2812c4d2eec713fbb1ee5fd5"));
-        assert(genesis.hashMerkleRoot == uint256S("0xa6931d00ddadee46ba1887df8b8a54b0d3108e0e92c85702e85ffa9a589122d6"));
+        assert(consensus.hashGenesisBlock == uint256S("0x01e6d00fd214c08faadea5abb4a2b27a4b143a7afafc92d34a813845882fd158"));
+        assert(genesis.hashMerkleRoot == uint256S("0x35d5d098d85997c5c6f5aab3a3f2e5a6e2543afd7c9da800f2bc951707be9367"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -458,7 +458,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x4a81bc2f877b35530b6606feb968ff574479590e2812c4d2eec713fbb1ee5fd5"))
+            ( 0, uint256S("0x01e6d00fd214c08faadea5abb4a2b27a4b143a7afafc92d34a813845882fd158"))
         };
 
         chainTxData = ChainTxData{
